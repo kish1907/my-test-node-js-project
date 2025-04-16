@@ -1,0 +1,18 @@
+{
+  "parent": "485241b9-60bc-4e8d-baa2-02e1d82c2f6d",
+  "pid": 84843,
+  "argv": [
+    "/opt/homebrew/Cellar/node/23.7.0/bin/node",
+    "/Users/kishore/Kishore/MyLearnings/NodeJS/Development/my-test-project/node_modules/.bin/mocha"
+  ],
+  "execArgv": [],
+  "cwd": "/Users/kishore/Kishore/MyLearnings/NodeJS/Development/my-test-project",
+  "time": 1744772474758,
+  "ppid": 84816,
+  "coverageFilename": "/Users/kishore/Kishore/MyLearnings/NodeJS/Development/my-test-project/.nyc_output/94d6249a-ceda-4f98-8ca9-666e2ccda77f.json",
+  "externalId": "",
+  "uuid": "94d6249a-ceda-4f98-8ca9-666e2ccda77f",
+  "files": [
+    "/Users/kishore/Kishore/MyLearnings/NodeJS/Development/my-test-project/index.js"
+  ]
+}

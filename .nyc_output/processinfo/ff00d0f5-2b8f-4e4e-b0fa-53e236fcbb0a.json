@@ -1,0 +1,18 @@
+{
+  "parent": "94d6249a-ceda-4f98-8ca9-666e2ccda77f",
+  "pid": 84858,
+  "argv": [
+    "/opt/homebrew/Cellar/node/23.7.0/bin/node",
+    "/Users/kishore/Kishore/MyLearnings/NodeJS/Development/my-test-project/index.js"
+  ],
+  "execArgv": [],
+  "cwd": "/Users/kishore/Kishore/MyLearnings/NodeJS/Development/my-test-project",
+  "time": 1744772475126,
+  "ppid": 84843,
+  "coverageFilename": "/Users/kishore/Kishore/MyLearnings/NodeJS/Development/my-test-project/.nyc_output/ff00d0f5-2b8f-4e4e-b0fa-53e236fcbb0a.json",
+  "externalId": "",
+  "uuid": "ff00d0f5-2b8f-4e4e-b0fa-53e236fcbb0a",
+  "files": [
+    "/Users/kishore/Kishore/MyLearnings/NodeJS/Development/my-test-project/index.js"
+  ]
+}
