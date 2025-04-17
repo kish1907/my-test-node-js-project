@@ -19,8 +19,11 @@ app.post('/add', (req, res) => {
   res.json({ sum });
 });
 
-// Route to subtract two numbers
+// Ensure the '/subtract' route is registered before the server starts
 app.post('/subtract', (req, res) => {
+    console.log(req.body); // Debugging line
+    // Debugging log to verify request payload
+    console.log('Request received at /subtract:', req.body);
     const { num1, num2 } = req.body;
 
     if (typeof num1 !== 'number' || typeof num2 !== 'number') {
