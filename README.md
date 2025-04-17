@@ -52,9 +52,8 @@ This is a simple Node.js API built with Express.js that provides an endpoint to 
 }
 ```
 
-### Example cURL Command
-
-You can use the following cURL command to test the API:
+### Example cURL Command for Addition
+You can use the following cURL command to test the addition endpoint:
 
 ```bash
 curl -X POST http://localhost:3000/add \
@@ -63,10 +62,43 @@ curl -X POST http://localhost:3000/add \
 ```
 
 This will return:
-
 ```json
 {
   "sum": 15
+}
+```
+
+### Example Request for Subtraction
+**POST** `http://localhost:3000/subtract`
+
+**Request Body:**
+```json
+{
+  "num1": 10,
+  "num2": 5
+}
+```
+
+**Response:**
+```json
+{
+  "difference": 5
+}
+```
+
+### Example cURL Command for Subtraction
+You can use the following cURL command to test the subtraction endpoint:
+
+```bash
+curl -X POST http://localhost:3000/subtract \
+     -H "Content-Type: application/json" \
+     -d '{"num1": 10, "num2": 5}'
+```
+
+This will return:
+```json
+{
+  "difference": 5
 }
 ```
 
@@ -83,10 +115,10 @@ This will return:
 To ensure the API works as expected, you can run the unit tests using the following command:
 
 ```bash
-npx mocha test/index.test.js
+npm test
 ```
 
-This will execute all the test cases and provide the results in the terminal.
+This will execute all the test cases and provide the results in the terminal, along with the code coverage report.
 
 ## Project Structure
 

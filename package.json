@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "mocha",
-    "coverage": "nyc npm test"
+    "test": "nyc mocha",
+    "coverage": "nyc report --reporter=text"
   },
   "keywords": [],
   "author": "",

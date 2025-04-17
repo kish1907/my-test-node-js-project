@@ -25,6 +25,26 @@ describe('POST /add', () => {
   });
 });
 
+describe('POST /subtract', () => {
+  it('should return the difference of two numbers', async () => {
+    const res = await request(app)
+      .post('/subtract')
+      .send({ num1: 10, num2: 5 });
+
+    expect(res.status).to.equal(200);
+    expect(res.body).to.have.property('difference', 5);
+  });
+
+  it('should return an error if num1 or num2 is not a number', async () => {
+    const res = await request(app)
+      .post('/subtract')
+      .send({ num1: 'ten', num2: 5 });
+
+    expect(res.status).to.equal(400);
+    expect(res.body).to.have.property('error', 'Both num1 and num2 should be numbers');
+  });
+});
+
 describe('Server startup', () => {
   it('should start the server without errors', (done) => {
     exec('node index.js', (error, stdout) => {

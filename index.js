@@ -19,6 +19,18 @@ app.post('/add', (req, res) => {
   res.json({ sum });
 });
 
+// Route to subtract two numbers
+app.post('/subtract', (req, res) => {
+    const { num1, num2 } = req.body;
+
+    if (typeof num1 !== 'number' || typeof num2 !== 'number') {
+        return res.status(400).json({ error: 'Both num1 and num2 should be numbers' });
+    }
+
+    const difference = num1 - num2;
+    res.json({ difference });
+});
+
 if (require.main === module) {
   app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
