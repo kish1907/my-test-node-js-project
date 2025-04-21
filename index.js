@@ -34,6 +34,18 @@ app.post('/subtract', (req, res) => {
     res.json({ difference });
 });
 
+// Multiplication endpoint
+app.post('/multiply', (req, res) => {
+    const { num1, num2 } = req.body;
+
+    if (typeof num1 !== 'number' || typeof num2 !== 'number') {
+        return res.status(400).json({ error: 'Both num1 and num2 should be numbers' });
+    }
+
+    const product = num1 * num2;
+    res.json({ product });
+});
+
 if (require.main === module) {
   app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);

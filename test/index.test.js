@@ -45,6 +45,26 @@ describe('POST /subtract', () => {
   });
 });
 
+describe('POST /multiply', () => {
+  it('should return the product of two numbers', async () => {
+    const res = await request(app)
+      .post('/multiply')
+      .send({ num1: 5, num2: 3 });
+
+    expect(res.status).to.equal(200);
+    expect(res.body).to.have.property('product', 15);
+  });
+
+  it('should return an error if num1 or num2 is not a number', async () => {
+    const res = await request(app)
+      .post('/multiply')
+      .send({ num1: 'five', num2: 3 });
+
+    expect(res.status).to.equal(400);
+    expect(res.body).to.have.property('error', 'Both num1 and num2 should be numbers');
+  });
+});
+
 describe('Server startup', () => {
   it('should start the server without errors', (done) => {
     exec('node index.js', (error, stdout) => {
