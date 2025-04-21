@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a simple Node.js Calculator API built with Express.js that provides endpoints for basic arithmetic operations. It includes input validation and comprehensive unit tests written using Mocha and Supertest.
+This is a simple Node.js Calculator API built with Express.js that provides endpoints for basic arithmetic operations. It includes input validation, comprehensive unit tests written using Mocha and Supertest, and Swagger documentation.
 
 ## Features
 
@@ -12,6 +12,7 @@ This is a simple Node.js Calculator API built with Express.js that provides endp
 - Input validation to ensure both inputs are numbers
 - Comprehensive unit tests for all endpoints
 - Error handling for invalid inputs
+- Swagger documentation for API exploration
 
 ## Installation
 
@@ -32,7 +33,21 @@ This is a simple Node.js Calculator API built with Express.js that provides endp
    node index.js
    ```
 2. The server will run on `http://localhost:3000`.
-3. Use an HTTP client (e.g., Postman, cURL) to test the API endpoints.
+3. Access the Swagger documentation at `http://localhost:3000/api-docs`.
+4. Use an HTTP client (e.g., Postman, cURL) to test the API endpoints.
+
+### API Documentation
+
+The API is documented using Swagger 3.0 (OpenAPI). You can access the interactive documentation by visiting:
+```
+http://localhost:3000/api-docs
+```
+
+This provides a user-friendly interface to:
+- Explore all available endpoints
+- View request/response schemas
+- Test the API directly from the browser
+- Download the OpenAPI specification
 
 ### API Endpoints
 
@@ -142,6 +157,7 @@ npm run coverage
 ```
 my-test-node-js-project/
 ├── index.js          # Main application file with API endpoints
+├── swagger.yaml      # OpenAPI/Swagger specification
 ├── package.json      # Project metadata and dependencies
 └── test/
     └── index.test.js # Unit tests for all endpoints
@@ -154,12 +170,15 @@ my-test-node-js-project/
 - [Chai](https://www.chaijs.com/) (^5.2.0): BDD/TDD assertion library
 - [Supertest](https://github.com/visionmedia/supertest) (^7.1.0): HTTP assertions for testing
 - [NYC](https://github.com/istanbuljs/nyc) (^17.1.0): Code coverage tool
+- [Swagger UI Express](https://github.com/scottie1984/swagger-ui-express): Serve Swagger UI
+- [YAMLJS](https://github.com/jeremyfa/yaml.js): YAML parser for JavaScript
 
 ## Development
 
 - ESLint and Prettier are configured for code quality and formatting
 - Git-ignored files include node_modules, coverage reports, and environment variables
 - Comprehensive test suite with high code coverage
+- OpenAPI/Swagger documentation for API specification
 
 ## License
 

@@ -1,9 +1,19 @@
 const express = require('express');
+const swaggerUi = require('swagger-ui-express');
+const YAML = require('yamljs');
+const path = require('path');
+
 const app = express();
 const port = 3000;
 
+// Load Swagger specification
+const swaggerDocument = YAML.load(path.join(__dirname, './swagger.yaml'));
+
 // Middleware to parse JSON requests
 app.use(express.json());
+
+// Serve Swagger UI
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // Route to add two numbers
 app.post('/add', (req, res) => {
@@ -49,6 +59,7 @@ app.post('/multiply', (req, res) => {
 if (require.main === module) {
   app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
+    console.log(`API documentation available at http://localhost:${port}/api-docs`);
   });
 }
 

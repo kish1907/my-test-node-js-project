@@ -1,0 +1,141 @@
+openapi: 3.0.0
+info:
+  title: Calculator API
+  description: A simple calculator API that provides basic arithmetic operations
+  version: 1.0.0
+  contact:
+    email: kish1907@gmail.com
+
+servers:
+  - url: http://localhost:3000
+    description: Local development server
+
+paths:
+  /add:
+    post:
+      summary: Add two numbers
+      description: Adds two numbers and returns their sum
+      operationId: addNumbers
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - num1
+                - num2
+              properties:
+                num1:
+                  type: number
+                  description: First number
+                num2:
+                  type: number
+                  description: Second number
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  sum:
+                    type: number
+                    description: The sum of the two numbers
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Error message
+
+  /subtract:
+    post:
+      summary: Subtract two numbers
+      description: Subtracts the second number from the first number
+      operationId: subtractNumbers
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - num1
+                - num2
+              properties:
+                num1:
+                  type: number
+                  description: First number
+                num2:
+                  type: number
+                  description: Second number
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  difference:
+                    type: number
+                    description: The difference between the two numbers
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Error message
+
+  /multiply:
+    post:
+      summary: Multiply two numbers
+      description: Multiplies two numbers and returns their product
+      operationId: multiplyNumbers
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - num1
+                - num2
+              properties:
+                num1:
+                  type: number
+                  description: First number
+                num2:
+                  type: number
+                  description: Second number
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  product:
+                    type: number
+                    description: The product of the two numbers
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Error message 
